@@ -1,0 +1,30 @@
+{
+  "name": "express-postgresql-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier . --write",
+    "app": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesar-a-delacruz/express-postgresql-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cesar-a-delacruz/express-postgresql-template/issues"
+  },
+  "homepage": "https://github.com/cesar-a-delacruz/express-postgresql-template#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
