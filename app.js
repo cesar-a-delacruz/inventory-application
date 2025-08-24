@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 dotenv.config();
 
-app.get("/", (req, res) => res.send(req.originalUrl));
+app.get("/", (req, res) => res.render("home", { title: "Home" }));
 app.use("/games", gamesRouter);
 app.use("/genres", genresRouter);
 app.use("/developers", developersRouter);
