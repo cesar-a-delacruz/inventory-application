@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "npx prettier . --write",
     "app": "node --watch app.js",
-    "migrate": "psql -d inventory -f ./db/sql/schema.sql"
+    "preresetdb": "dropdb inventory && createdb inventory",
+    "resetdb": "psql -d inventory -f ./db/sql/schema.sql",
+    "postresetdb": "psql -d inventory -f ./db/sql/data.sql"
   },
   "repository": {
     "type": "git",
