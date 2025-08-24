@@ -1,7 +1,8 @@
 CREATE TABLE games (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     title VARCHAR(100),
-    release_year INTEGER
+    release_year INTEGER,
+    cover TEXT
 );
 
 CREATE TABLE genres (
