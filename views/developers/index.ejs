@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Application: <%= title %></title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Country</th>
+            </thead>
+            <tbody>
+                <% items.map(item => { %>
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td><%= item.full_name %></td>
+                        <td><%= item.country %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
