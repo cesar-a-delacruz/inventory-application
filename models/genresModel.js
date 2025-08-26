@@ -11,4 +11,12 @@ module.exports = {
     const { rows } = await pool.query("SELECT * FROM genres");
     return rows;
   },
+  async insert(genre) {
+    const { title } = genre;
+    const { rowCount } = await pool.query(
+      "INSERT INTO genres (title) VALUES ($1)",
+      [title],
+    );
+    return rowCount;
+  },
 };

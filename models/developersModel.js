@@ -12,4 +12,12 @@ module.exports = {
     const { rows } = await pool.query("SELECT * FROM developers");
     return rows;
   },
+  async insert(developer) {
+    const { full_name, country } = developer;
+    const { rowCount } = await pool.query(
+      "INSERT INTO developers (full_name, country) VALUES ($1, $2)",
+      [full_name, country],
+    );
+    return rowCount;
+  },
 };
