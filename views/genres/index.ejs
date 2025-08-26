@@ -8,16 +8,21 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <a href="/genres/new">Add Genre</a>
         <table>
             <thead>
                 <th>ID</th>
                 <th>Title</th>
+                <th>Action</th>
             </thead>
             <tbody>
                 <% items.map(item => { %>
                     <tr>
                         <td><%= item.id %></td>
                         <td><%= item.title %></td>
+                        <td>
+                            <a href="/genres/<%= item.id %>">View</a>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>

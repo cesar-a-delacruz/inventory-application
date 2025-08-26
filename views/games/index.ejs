@@ -8,12 +8,14 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <a href="/games/new">Add Game</a>
         <table>
             <thead>
                 <th>ID</th>
                 <th>Cover</th>
                 <th>Title</th>
                 <th>Release Year</th>
+                <th>Action</th>
             </thead>
             <tbody>
                 <% items.map(item => { %>
@@ -22,6 +24,9 @@
                         <td><img src="<%= item.cover %>" alt="<%= item.title %>"></td>
                         <td><%= item.title %></td>
                         <td><%= item.release_year %></td>
+                        <td>
+                            <a href="/games/<%= item.id %>">View</a>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>

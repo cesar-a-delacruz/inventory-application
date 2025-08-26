@@ -8,11 +8,13 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <a href="/developers/new">Add Developer</a>
         <table>
             <thead>
                 <th>ID</th>
                 <th>Full Name</th>
                 <th>Country</th>
+                <th>Action</th>
             </thead>
             <tbody>
                 <% items.map(item => { %>
@@ -20,6 +22,9 @@
                         <td><%= item.id %></td>
                         <td><%= item.full_name %></td>
                         <td><%= item.country %></td>
+                        <td>
+                            <a href="/developers/<%= item.id %>">View</a>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>
