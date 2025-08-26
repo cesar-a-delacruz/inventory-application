@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Application: <%= title %></title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <form action="/developers/<%= item.id %>" method="post">
+            <label for="full_name">Full Name:</label>
+            <input type="text" name="full_name" id="full_name" value="<%= item.full_name %>">
+            <br>
+            <label for="country">Country:</label>
+            <input type="text" name="country" id="country" min="2000" value="<%= item.country %>">
+            <br>
+            <button type="submit">Save</button>
+        </form>
+        <a href="/developers/<%= item.id %>">Cancel</a>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
