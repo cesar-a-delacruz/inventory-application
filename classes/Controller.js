@@ -26,14 +26,16 @@ module.exports = class Controller {
     res.render(`${this.#viewFolder}/new`, { title: this.#viewFolder });
   }
   async edit(req, res) {
-    res.send(req.originalUrl);
+    const item = await this.#model.find(req.params.id);
+    res.render(`${this.#viewFolder}/edit`, { title: this.#viewFolder, item });
   }
   async create(req, res) {
     const result = await this.#model.insert(req.body);
     res.redirect(`/${this.#viewFolder}`);
   }
   async update(req, res) {
-    res.send(req.originalUrl);
+    const result = await this.#model.update(req.params.id, req.body);
+    res.redirect(`/${this.#viewFolder}/${req.params.id}`);
   }
   async delete(req, res) {
     res.send(req.originalUrl);
