@@ -13,6 +13,7 @@
             <li><img src="<%= item.cover %>" alt="<%= item.title %>"></li>
             <li><strong>Release Year: </strong><%= item.release_year %></li>
         </ul>
+        <a href="/games/<%= item.id %>/edit">Edit</a>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
