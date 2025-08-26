@@ -4,7 +4,7 @@ module.exports = class Controller {
   constructor(model, viewFolder) {
     this.#model = model;
     this.#viewFolder = viewFolder;
-    
+
     this.index = this.index.bind(this);
     this.show = this.show.bind(this);
     this.new = this.new.bind(this);
@@ -23,13 +23,14 @@ module.exports = class Controller {
     res.render(`${this.#viewFolder}/show`, { title: this.#viewFolder, item });
   }
   async new(req, res) {
-    res.send(req.originalUrl);
+    res.render(`${this.#viewFolder}/new`, { title: this.#viewFolder });
   }
   async edit(req, res) {
     res.send(req.originalUrl);
   }
   async create(req, res) {
-    res.send(req.originalUrl);
+    const result = await this.#model.insert(req.body);
+    res.redirect(`/${this.#viewFolder}`);
   }
   async update(req, res) {
     res.send(req.originalUrl);
