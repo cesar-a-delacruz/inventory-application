@@ -20,4 +20,12 @@ module.exports = {
     );
     return rowCount;
   },
+  async update(id, developer) {
+    const { full_name, country } = developer;
+    const { rowCount } = await pool.query(
+      "UPDATE developers SET full_name = $1, country = $2 WHERE id = $3",
+      [full_name, country, id],
+    );
+    return rowCount;
+  },
 };

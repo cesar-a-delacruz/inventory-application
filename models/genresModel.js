@@ -19,4 +19,12 @@ module.exports = {
     );
     return rowCount;
   },
+  async update(id, genre) {
+    const { title } = genre;
+    const { rowCount } = await pool.query(
+      "UPDATE genres SET title = $1 WHERE id = $2",
+      [title, id],
+    );
+    return rowCount;
+  },
 };

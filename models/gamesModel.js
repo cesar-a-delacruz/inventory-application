@@ -19,4 +19,12 @@ module.exports = {
     );
     return rowCount;
   },
+  async update(id, game) {
+    const { title, release_year, cover } = game;
+    const { rowCount } = await pool.query(
+      "UPDATE games SET title = $1, release_year = $2, cover = $3 WHERE id = $4",
+      [title, release_year, cover, id],
+    );
+    return rowCount;
+  },
 };
