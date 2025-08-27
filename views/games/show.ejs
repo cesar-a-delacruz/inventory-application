@@ -16,6 +16,7 @@
             <li><strong>Developer(s): </strong><%= developers.map(developer => developer.full_name).join(', ') %></li>
         </ul>
         <a href="/games/<%= item.id %>/edit">Edit</a>
+        <a href="/games/">All games</a>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
