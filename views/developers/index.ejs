@@ -23,7 +23,9 @@
                         <td><%= item.full_name %></td>
                         <td><%= item.country %></td>
                         <td>
-                            <a href="/developers/<%= item.id %>">View</a>
+                            <form action="/developers/<%= item.id %>" method="get">
+                                <button type="submit">View</button>
+                            </form>
                         </td>
                         <td>
                             <form action="/developers/<%= item.id %>/delete" method="post">

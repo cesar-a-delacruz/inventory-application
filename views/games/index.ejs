@@ -25,7 +25,9 @@
                         <td><%= item.title %></td>
                         <td><%= item.release_year %></td>
                         <td>
-                            <a href="/games/<%= item.id %>">View</a>
+                            <form action="/games/<%= item.id %>" method="get">
+                                <button type="submit">View</button>
+                            </form>
                         </td>
                         <td>
                             <form action="/games/<%= item.id %>/delete" method="post">
