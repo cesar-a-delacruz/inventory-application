@@ -7,6 +7,14 @@ module.exports = {
     ]);
     return rows[0];
   },
+  async findByGame(gameId) {
+    const { rows } = await pool.query(
+      "SELECT gg.genre_id AS id, g.title AS title FROM games_genres AS gg " +
+        "INNER JOIN genres AS g ON gg.genre_id = g.id WHERE game_id = $1",
+      [gameId],
+    );
+    return rows;
+  },
   async findAll() {
     const { rows } = await pool.query("SELECT * FROM genres");
     return rows;

@@ -8,6 +8,14 @@ module.exports = {
     );
     return rows[0];
   },
+  async findByGame(gameId) {
+    const { rows } = await pool.query(
+      "SELECT gd.developer_id AS id, d.full_name AS full_name FROM games_developers AS gd " +
+        "INNER JOIN developers AS d ON gd.developer_id = d.id WHERE game_id = $1",
+      [gameId],
+    );
+    return rows;
+  },
   async findAll() {
     const { rows } = await pool.query("SELECT * FROM developers");
     return rows;

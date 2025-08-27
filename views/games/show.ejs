@@ -12,6 +12,8 @@
             <li><strong>Title: </strong><%= item.title %></li>
             <li><img src="<%= item.cover %>" alt="<%= item.title %>"></li>
             <li><strong>Release Year: </strong><%= item.release_year %></li>
+            <li><strong>Genre(s): </strong><%= genres.map(genre => genre.title).join(', ') %></li>
+            <li><strong>Developer(s): </strong><%= developers.map(developer => developer.full_name).join(', ') %></li>
         </ul>
         <a href="/games/<%= item.id %>/edit">Edit</a>
     </main>
