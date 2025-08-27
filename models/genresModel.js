@@ -35,4 +35,10 @@ module.exports = {
     );
     return rowCount;
   },
+  async delete(id) {
+    const { rowCount } = await pool.query("DELETE FROM genres WHERE id = $1", [
+      id,
+    ]);
+    return rowCount;
+  },
 };

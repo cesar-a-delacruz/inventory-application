@@ -41,4 +41,10 @@ module.exports = {
     );
     return rowCount;
   },
+  async delete(id) {
+    const { rowCount } = await pool.query("DELETE FROM games WHERE id = $1", [
+      id,
+    ]);
+    return rowCount;
+  },
 };
