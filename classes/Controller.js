@@ -38,6 +38,7 @@ module.exports = class Controller {
     res.redirect(`/${this.#viewFolder}/${req.params.id}`);
   }
   async delete(req, res) {
-    res.send(req.originalUrl);
+    const result = await this.#model.delete(req.params.id);
+    res.redirect(`/${this.#viewFolder}`);
   }
 };
