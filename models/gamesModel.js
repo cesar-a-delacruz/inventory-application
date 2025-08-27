@@ -12,11 +12,25 @@ module.exports = {
     return rows;
   },
   async insert(game) {
-    const { title, release_year, cover } = game;
+    const { title, release_year, cover, genres, developers } = game;
     const { rowCount } = await pool.query(
       "INSERT INTO games (title, release_year, cover) VALUES ($1, $2, $3)",
       [title, release_year, cover],
     );
+    const id = (await pool.query("SELECT COUNT(*) FROM games")).rows[0].count;
+    genres.forEach(async (genre) => {
+      await pool.query(
+        "INSERT INTO games_genres (game_id, genre_id) VALUES ($1, $2)",
+        [id, genre],
+      );
+    });
+    developers.forEach(async (developer) => {
+      await pool.query(
+        "INSERT INTO games_developers (game_id, developer_id) VALUES ($1, $2)",
+        [id, developer],
+      );
+    });
+
     return rowCount;
   },
   async update(id, game) {

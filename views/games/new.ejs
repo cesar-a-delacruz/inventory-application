@@ -18,6 +18,22 @@
             <label for="cover">Cover:</label>
             <input type="url" name="cover" id="cover">
             <br>
+            <label for="genres">Genre(s):</label>
+            <select name="genres[]" id="genres" size="<%= genres.length %>" multiple>
+                <% genres.map((genre) => { %>
+                    <option value="<%= genre.id %>"><%= genre.title %></option>
+                <% }) %>
+                <option value=""></option>
+            </select>
+            <br>
+            <label for="developers">Developer(s):</label>
+            <select name="developers[]" id="developers" size="<%= developers.length %>" multiple>
+                <% developers.map((developer) => { %>
+                    <option value="<%= developer.id %>"><%= developer.full_name %></option>
+                <% }) %>
+                <option value=""></option>
+            </select>
+            <br>
             <button type="submit">Save</button>
         </form>
     </main>
