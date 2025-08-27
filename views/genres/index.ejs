@@ -23,6 +23,11 @@
                         <td>
                             <a href="/genres/<%= item.id %>">View</a>
                         </td>
+                        <td>
+                            <form action="/genres/<%= item.id %>/delete" method="post">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>

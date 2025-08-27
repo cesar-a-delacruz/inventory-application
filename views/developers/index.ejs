@@ -25,6 +25,11 @@
                         <td>
                             <a href="/developers/<%= item.id %>">View</a>
                         </td>
+                        <td>
+                            <form action="/developers/<%= item.id %>/delete" method="post">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>
