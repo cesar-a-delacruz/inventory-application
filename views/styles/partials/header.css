@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(24, 113, 202);
+  color: white;
+}
+header > * {
+  margin: 10px;
+}
+header a {
+  text-decoration: none;
+}

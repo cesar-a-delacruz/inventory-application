@@ -6,6 +6,7 @@ const developersRouter = require("./routes/developersRouter");
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("views/styles"));
 app.set("view engine", "ejs");
 dotenv.config();
 

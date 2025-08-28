@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Application: <%= title %></title>
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./partials/header.css">
+    <link rel="stylesheet" href="./partials/footer.css">
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
     <main>
         <h3>Choose a dataset</h3>
-        <ul>
+        <ol>
             <li><a href="/games">Games</a></li>
             <li><a href="/genres">Genres</a></li>
             <li><a href="/developers">Developers</a></li>
-        </ul>
+        </ol>
     </main>
     <%- include('./partials/footer.ejs') %>
 </body>
