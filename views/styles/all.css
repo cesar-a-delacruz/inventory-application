@@ -26,3 +26,16 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(98, 176, 255);
+  color: white;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(43, 149, 255);
+}

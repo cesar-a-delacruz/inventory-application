@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Application: <%= title %></title>
+    <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./partials/header.css">
     <link rel="stylesheet" href="./partials/footer.css">
 </head>
@@ -26,8 +27,6 @@
                             <form action="/genres/<%= item.id %>" method="get">
                                 <button type="submit">View</button>
                             </form>
-                        </td>
-                        <td>
                             <form action="/genres/<%= item.id %>/delete" method="post">
                                 <button type="submit">Delete</button>
                             </form>
