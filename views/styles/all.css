@@ -41,3 +41,7 @@ button {
 button:hover {
   background-color: rgb(43, 149, 255);
 }
+
+ul, ol {
+  padding: 0;
+}
