@@ -1,0 +1,12 @@
+@import url("./all.css");
+
+main form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+main form button {
+  align-self: center;
+  width: fit-content;
+}
