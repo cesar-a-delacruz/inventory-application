@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Application: <%= title %></title>
-    <link rel="stylesheet" href="./partials/header.css">
-    <link rel="stylesheet" href="./partials/footer.css">
+    <link rel="stylesheet" href="/show.css">
+    <link rel="stylesheet" href="/partials/header.css">
+    <link rel="stylesheet" href="/partials/footer.css">
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
@@ -14,8 +15,12 @@
             <li><strong>Full Name: </strong><%= item.full_name %></li>
             <li><strong>Country: </strong><%= item.country %></li>
         </ul>
-        <a href="/developers/<%= item.id %>/edit">Edit</a>
-        <a href="/developers/">All developers</a>
+        <div class="links">
+            <form action="/developers/<%= item.id %>/edit" method="get">
+                <button type="submit">Edit</button>
+            </form>
+            <a href="/developers/">All developers</a>
+        </div>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>

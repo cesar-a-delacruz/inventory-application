@@ -17,6 +17,8 @@ main {
   background-color: rgb(48, 68, 88);
   color: white;
   flex: 1;
+  gap: 20px;
+  padding: 25px;
 }
 
 a,

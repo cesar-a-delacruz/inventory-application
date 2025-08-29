@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Application: <%= title %></title>
-    <link rel="stylesheet" href="./partials/header.css">
-    <link rel="stylesheet" href="./partials/footer.css">
+    <link rel="stylesheet" href="/show.css">
+    <link rel="stylesheet" href="/partials/header.css">
+    <link rel="stylesheet" href="/partials/footer.css">
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
@@ -17,8 +18,12 @@
             <li><strong>Genre(s): </strong><%= genres.map(genre => genre.title).join(', ') %></li>
             <li><strong>Developer(s): </strong><%= developers.map(developer => developer.full_name).join(', ') %></li>
         </ul>
-        <a href="/games/<%= item.id %>/edit">Edit</a>
-        <a href="/games/">All games</a>
+        <div class="links">
+            <form action="/games/<%= item.id %>/edit" method="get">
+                <button type="submit">Edit</button>
+            </form>
+            <a href="/games/">All games</a>
+        </div>
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>

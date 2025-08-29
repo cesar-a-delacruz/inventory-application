@@ -1,9 +1,5 @@
 @import url("./all.css");
 
-main {
-  gap: 20px;
-  padding: 25px;
-}
 main table {
   background-color: rgb(178, 216, 255);
 }

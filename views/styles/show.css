@@ -1,0 +1,14 @@
+@import url("./all.css");
+
+main li {
+  list-style: none;
+  text-align: center;
+  padding: 2px;
+}
+main li img {
+  width: 150px;
+  height: auto;
+}
+main div.links form {
+  text-align: center;
+}
